@@ -28,7 +28,7 @@ import pytest
 from app.ingestion.engine import run_ingestion
 
 # Reuse fixtures and helpers from conftest
-from conftest import VALID_ROW, COLUMNS, make_csv, mem_conn
+from conftest import VALID_ROW, COLUMNS, make_csv, mem_conn  # noqa: E402
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────── #

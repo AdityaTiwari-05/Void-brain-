@@ -248,7 +248,7 @@ def _run_pipeline(
     # ── 3. Column schema check ───────────────────────────────────────────── #
     # Peek at header without loading data
     header_df = conn.execute(
-        f"SELECT * FROM read_csv('{src_str}', header=true, sample_size=0) LIMIT 0"
+        f"SELECT * FROM read_csv('{src_str}', header=true, all_varchar=true) LIMIT 0"
     ).fetchdf()
     file_columns: list[str] = list(header_df.columns)
 
@@ -378,8 +378,8 @@ def _run_pipeline(
                       OR trim(Transaction_ID) = ''
                  THEN false ELSE true END                         AS _tid_ok,
 
-            regexp_matches(trim(Sender_Account),   '{acct_regex}') AS _sender_ok,
-            regexp_matches(trim(Receiver_Account), '{acct_regex}') AS _receiver_ok,
+            COALESCE(regexp_matches(trim(Sender_Account),   '{acct_regex}'), false) AS _sender_ok,
+            COALESCE(regexp_matches(trim(Receiver_Account), '{acct_regex}'), false) AS _receiver_ok,
 
             -- Amount: TRY_CAST handles non-numeric gracefully
             TRY_CAST(trim(Amount) AS DECIMAL(18,2))               AS _amount_val,

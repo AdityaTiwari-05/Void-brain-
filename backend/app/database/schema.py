@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS transactions (
     -- Parties
     sender_account   VARCHAR        NOT NULL,
     receiver_account VARCHAR        NOT NULL,
-    sender_ifsc      VARCHAR        NOT NULL,
-    receiver_ifsc    VARCHAR        NOT NULL,
+    sender_ifsc      VARCHAR,
+    receiver_ifsc    VARCHAR,
 
     -- Financial
     amount           DECIMAL(18,2)  NOT NULL,

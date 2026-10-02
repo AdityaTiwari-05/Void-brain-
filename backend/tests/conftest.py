@@ -22,6 +22,11 @@ _backend = Path(__file__).resolve().parent.parent
 if str(_backend) not in sys.path:
     sys.path.insert(0, str(_backend))
 
+# Also ensure tests/ directory itself is importable (so conftest can be imported directly)
+_tests = Path(__file__).resolve().parent
+if str(_tests) not in sys.path:
+    sys.path.insert(0, str(_tests))
+
 # Override settings so tests never touch real data dirs or DB
 os.environ.setdefault("DB_PATH", ":memory:")
 os.environ.setdefault("DATA_RAW_DIR", tempfile.gettempdir())
