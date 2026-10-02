@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# DuckDB files (large — do not commit)
+*.duckdb
+*.duckdb-shm
+*.duckdb-wal
+
+# Large data files
+data/raw/*.csv
+data/raw/*.xlsx
+data/processed/
+data/benchmarks/
+data/parquet/
+
+# ML models (large binary files)
+data/models/*.pkl
+data/models/*.joblib
+
+# Environment secrets — never commit
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Test artifacts
+.pytest_cache/
+htmlcov/
+.coverage
+*.coverage
+
+# Logs
+*.log

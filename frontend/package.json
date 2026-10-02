@@ -1,0 +1,39 @@
+{
+  "name": "abhedya-chakra-ui",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.0",
+    "axios": "^1.7.2",
+    "cytoscape": "^3.29.2",
+    "react-cytoscapejs": "^2.0.0",
+    "recharts": "^2.12.7",
+    "react-virtuoso": "^4.7.11",
+    "react-hot-toast": "^2.4.1",
+    "lucide-react": "^0.396.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/cytoscape": "^3.21.4",
+    "@types/react-cytoscapejs": "^2.1.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.1",
+    "eslint": "^8.57.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4"
+  }
+}
