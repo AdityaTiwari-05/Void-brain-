@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# DuckDB files (large — do not commit)
+*.duckdb
+*.duckdb-shm
+*.duckdb-wal
+
+# Large data files
+data/raw/*.csv
+data/processed/
+data/benchmarks/
+data/parquet/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

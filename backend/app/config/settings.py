@@ -50,6 +50,15 @@ class Settings(BaseSettings):
     # --- Logging ---
     log_level: str = "INFO"
 
+    # --- Module B: DuckDB analytics store (read-only query layer) ---
+    analytics_db_path: str = "data/processed/abhedya.duckdb"
+    analytics_memory_limit: str = "4GB"
+    analytics_threads: int = 4
+
+    # --- Module B: API response limits ---
+    query_max_limit: int = 1000
+    query_default_limit: int = 100
+
     # ------------------------------------------------------------------ #
     # Validators                                                           #
     # ------------------------------------------------------------------ #

@@ -117,6 +117,24 @@ _ALL_DDL = [
     _DDL_INGESTION_ERRORS_SEQ,
     _DDL_INGESTION_ERRORS,
     _DDL_TRANSACTIONS,
+    # Module B: account-level aggregates table
+    """
+    CREATE TABLE IF NOT EXISTS accounts (
+        account_node_id       BIGINT PRIMARY KEY,
+        normalized_account_id VARCHAR NOT NULL UNIQUE,
+        first_seen            TIMESTAMP,
+        last_seen             TIMESTAMP,
+        incoming_count        BIGINT DEFAULT 0,
+        outgoing_count        BIGINT DEFAULT 0,
+        incoming_amount       DECIMAL(18,2) DEFAULT 0,
+        outgoing_amount       DECIMAL(18,2) DEFAULT 0,
+        unique_senders        BIGINT DEFAULT 0,
+        unique_receivers      BIGINT DEFAULT 0,
+        observed_ifsc_values  VARCHAR,
+        last_ingestion_batch  VARCHAR
+    )
+    """,
+    "CREATE SEQUENCE IF NOT EXISTS account_node_id_seq START 1",
 ]
 
 # ── Public API ────────────────────────────────────────────────────────────── #
